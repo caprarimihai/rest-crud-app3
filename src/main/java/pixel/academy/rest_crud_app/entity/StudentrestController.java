@@ -95,5 +95,15 @@ public class StudentrestController {
         // Returnăm răspunsul
         return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
     }
+    // Endpoint pentru adăugarea unui student
+    @PostMapping("/students")
+    public Student addStudent(@RequestBody Student theStudent) {
+
+        // Adăugăm studentul în listă
+        theStudents.add(theStudent);
+
+        // Returnăm studentul adăugat
+        return theStudent;
+    }
 
 }
